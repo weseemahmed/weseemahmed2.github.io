@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Dot density map: Mapping ethnicities in Toronto with ggplot2"
+title: "Dot density map"
+subtitle: "Mapping ethnicities in Toronto with ggplot2"
 author: "Weseem Ahmed "
 date: "January 20, 2019"
 comments: true
