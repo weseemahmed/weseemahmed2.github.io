@@ -90,5 +90,5 @@ circos.trackPlotRegion(
 
 <p align="center">
   <img alt="chord diagram"
-  src="{{ site.baseurl }}/includes/20190117-chord-diagram.png"/>
+  src="{{ site.baseurl }}/img/20190117-chord-diagram.png"/>
 </p>
