@@ -157,5 +157,5 @@ p <- ggplot() +
 ```
 <p align="center">
   <img alt="dot density"
-  src="{{ site.baseurl }}/includes/20190120-dot-density.png"/>
+  src="{{ site.baseurl }}/img/20190120-dot-density.png"/>
 </p>
