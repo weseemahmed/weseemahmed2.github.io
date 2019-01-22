@@ -16,14 +16,14 @@ output: html_document
 Anyone who knows me knows that visualizations are powerful tools to show data to analysts and the layman alike. And what I particularly try to achieve while visualizing data is to pack as much information as I can into a single picture. For that, maps are fantastic tools since they can show "what" "where" and "when". But what if we can show several "whats" in a single, easy to read map? That's where dot density maps come in.
 
 ### When best to use dot density maps?
--In any other normal map application situation and;
--When the variable you would like to show has several categories or groups which you would like to emphasize.
+- In any other normal map application situation and;
+- When the variable you would like to show has several categories or groups which you would like to emphasize.
 
 
 ## Getting started
 To begin creating our map, there are two things that we're going to need:
--The relevant shapefiles.
--Data that we want to visualize.
+- The relevant shapefiles.
+- Data that we want to visualize.
 
 It's important to remember that the data we are working with must match the regions in the shapefiles. This shouldn't be a problem as long
 as the sources are the same and the years are identical (ex. 2016 shapefiles with 2016 data, although close years tends to work fine but 
