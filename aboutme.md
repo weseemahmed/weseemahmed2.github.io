@@ -7,7 +7,7 @@ subtitle: Why you'd want to know more about me
 My name is Weseem Ahmed. By day I'm a humble policy analyst and by night I rock the data world. Well, at least as much as a data enthusiast could!
 
 ### My history
-I'm formerly trained as an economist earning my Masters degree from the Toulouse School of Economics (France). Yes, I was there when Jean Tirole won the Nobel Prize in economics in 2014 (in true French fashion, classes where cancelled and everyone dined on cheese and wine, but I digress).
+I'm formerly trained as an economist earning my Masters degree from the Toulouse School of Economics (France). Yes, I was there when Jean Tirole won the Nobel Prize in economics in 2014 (in true French fashion, classes were cancelled and everyone dined on cheese and wine, but I digress).
 
 ### What gets me up in the morning and keeps me up at night?
 Policy analysis is cool. Understanding the big picture, figuring out what variables cause others to move while factoring in human emotions, it's all like one big mystery. And the best part is if done correctly, a real difference can be made in the lives of everyday Canadians!
