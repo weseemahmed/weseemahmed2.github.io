@@ -1,16 +1,17 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Why you'd want to know more about me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Weseem Ahmed. By day I'm a humble policy analyst and by night I rock the data world. Well, at least as much as a data enthusiast could!
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+### My history
+I'm formerly trained as an economist earning my Masters degree from the Toulouse School of Economics (France). Yes, I was there when Jean Tirole won the Nobel Prize in economics in 2014 (in true French fashion, classes where cancelled and everyone dined on cheese and wine, but I digress).
 
-What else do you need?
+### What gets me up in the morning and keeps me up at night?
+Policy analysis is cool. Understanding the big picture, figuring out what variables cause others to move while factoring in human emotions, it's all like one big mystery. And the best part is if done correctly, a real difference can be made in the lives of everyday Canadians!
 
-### my history
+One thing I've learned along the way is that data can take a lot of the guess work out of figuring out if certain policies are successful or determining where society is headed. Not to mention that it **drastically** improves the efficiency of my work. Why manually sift through a dataset when you can let R or Python rip right through it? So in my free time I've made it my mission to keep improving my data skills despite having no formal education in it beyond basic courses.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+So for anyone following my blog, I hope the things I've learned can help you and hopefully save you the time I spent banging my head against my computer and that you'll all follow me on my journey as I keep growing to become a data scientist!
