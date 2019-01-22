@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Chord diagram: Visualizing intra-Ontario migration"
+title: "Chord diagram"
+subtitle: "Visualizing intra-Ontario migration"
 author: "Weseem Ahmed "
 date: "January 17, 2019"
 comments: true
