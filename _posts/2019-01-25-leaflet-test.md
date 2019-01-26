@@ -14,4 +14,4 @@ leaflet() %>% addTiles() %>%
     'Here is the <b>Department of Statistics</b>, ISU'
   )
 ```
-{% include index.html %}
+{% include test_map.html %}
