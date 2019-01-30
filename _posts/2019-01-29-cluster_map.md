@@ -53,7 +53,7 @@ Economic_Regions <- merge(master.er, er.geo, by = "ERNAME") %>% st_as_sf()
 Census_Divisions <- merge(master.cd, cd.geo, by = "CDNAME") %>% st_as_sf()
 ```
 
-```{r}
+```{r, eval = TRUE}
 varlist <- setdiff(names(Provinces[,-1]), "geometry")
 
 ui <- bootstrapPage(
