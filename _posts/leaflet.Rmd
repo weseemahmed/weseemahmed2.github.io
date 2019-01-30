@@ -1,4 +1,0 @@
----
-title: "An Interactive Map"
----
-{% include er_map.html%}
