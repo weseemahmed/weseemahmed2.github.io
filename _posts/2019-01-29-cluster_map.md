@@ -3,6 +3,7 @@ title: "Cluster Map"
 author: "Weseem"
 date: "January 29, 2019"
 output: html_document
+runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
