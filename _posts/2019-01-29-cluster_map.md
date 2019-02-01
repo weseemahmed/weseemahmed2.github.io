@@ -6,5 +6,6 @@ output: html_document
 runtime: shiny
 ---
 
-{% include Cluster-mapping.Rmd %}
+<iframe src="https://weseemahmed.shinyapps.io/Cluster_Map//{{ include.id }}" frameborder="0" allowfullscreen></iframe>
+
 
