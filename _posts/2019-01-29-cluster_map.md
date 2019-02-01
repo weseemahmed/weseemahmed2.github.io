@@ -6,6 +6,6 @@ output: html_document
 runtime: shiny
 ---
 
-<iframe src="https://weseemahmed.shinyapps.io/Cluster_Map//{{ include.id }}" frameborder="0" allowfullscreen width:"100%";height:"100%"></iframe>
+<iframe src="https://weseemahmed.shinyapps.io/Cluster_Map/{{ include.id }}" frameborder="0" width:"100%";height:"100%"></iframe>
 
 
