@@ -61,8 +61,7 @@ The last variable `SACTYPE` is of particular interest to me and policy makers be
 how rural it is and combine that with census data.
 
 So let's say we want to look at income levels by CSD and see if there's a difference between cities and rural regions. We already
-have every CSD and how rural it is so now all we need is household income which can be found <a href="https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/dt-td/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=1&PID=110192&PRID=10&PTYPE=109445&S=0&SHOWALL=0&SUB=999&Temporal=2016,2017&THEME=119&VID=0&VNAMEE=&VNAMEF="> here: 
-Download the .csv file and load it into R.
+have every CSD and how rural it is so now all we need is household income which can be found <a href="https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/dt-td/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=1&PID=110192&PRID=10&PTYPE=109445&S=0&SHOWALL=0&SUB=999&Temporal=2016,2017&THEME=119&VID=0&VNAMEE=&VNAMEF="> here. Download the .csv file and load it into R.
 
 ```r
 data <- read.csv("C:/Users/wesee/Documents/98-400-X2016099_English_CSV_data.csv", stringsAsFactors = FALSE)
