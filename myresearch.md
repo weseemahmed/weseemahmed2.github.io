@@ -13,7 +13,7 @@ subtitle: Some of the official projects I've worked on
 <h3>Publications </h3>
 
 <p>
-The Canadian Cluster Handbook (2019)<br>
+The Canadian Cluster Handbook (2019)
   <ul>
    <li>A comprehensive guide on developing and maintaining a cluster ecosystem in Canada.</li>
    <li>ISBN: 978-1-927065-33-4</li>
@@ -23,7 +23,7 @@ The Canadian Cluster Handbook (2019)<br>
 Unfinished Business: Ontario since the Great Recession</a> (2018)
 <ul>
   <li> A review of Ontario's economic and social performance over the past 17 years with emphasis on the effects of the Great Recession.</li>
-  <li> Prepared for Ontario’s Panel on Economic Growth & Prosperity.
+  <li> Prepared for Ontario’s Panel on Economic Growth & Prosperity.</li>
   <li> ISBN: 978-1-927065-31-0</li>
   </ul>
 </p>
