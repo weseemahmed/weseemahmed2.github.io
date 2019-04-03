@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Research & Data analysis
+title: <h2>Research & Data analysis</h2>
 subtitle: Some of the official projects I've worked on
 ---
 
