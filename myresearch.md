@@ -14,14 +14,18 @@ subtitle: Some of the official projects I've worked on
 
 <p>
 The Canadian Cluster Handbook (2019)<br>
-   - A comprehensive guide on developing and maintaining a cluster ecosystem in Canada.<br>
-   - ISBN: 978-1-927065-33-4<br>
+  <ul>
+   <li>A comprehensive guide on developing and maintaining a cluster ecosystem in Canada.</li><br>
+   <li>ISBN: 978-1-927065-33-4</li><br>
+   </ul>
 
 <a href="https://www.competeprosper.ca/work/annual-reports/unfinished-business-ontario-since-the-great-recession">
 Unfinished Business: Ontario since the Great Recession</a> (2018) <br>
-  - A review of Ontario's economic and social performance over the past 17 years with emphasis on the effects of the Great Recession.
-  - Prepared for Ontario’s Panel on Economic Growth & Prosperity.<br>
-  - ISBN: 978-1-927065-31-0
+<ul>
+  <li> A review of Ontario's economic and social performance over the past 17 years with emphasis on the effects of the Great Recession.</li><br>
+  <li> Prepared for Ontario’s Panel on Economic Growth & Prosperity.<br>
+  <li> ISBN: 978-1-927065-31-0</li>
+  </ul>
 </p>
 
 <h3> Research projects </h3>
