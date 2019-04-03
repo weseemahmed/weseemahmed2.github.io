@@ -20,7 +20,7 @@ The Canadian Cluster Handbook (2019)<br>
    </ul>
 
 <a href="https://www.competeprosper.ca/work/annual-reports/unfinished-business-ontario-since-the-great-recession">
-Unfinished Business: Ontario since the Great Recession</a> (2018) <br>
+Unfinished Business: Ontario since the Great Recession</a> (2018)
 <ul>
   <li> A review of Ontario's economic and social performance over the past 17 years with emphasis on the effects of the Great Recession.</li>
   <li> Prepared for Ontario’s Panel on Economic Growth & Prosperity.
