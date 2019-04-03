@@ -10,18 +10,19 @@ subtitle: Some of the official projects I've worked on
   src="{{ site.baseurl }}/img/icap-logo.png"/>
 </p>
 
+<p>
 <h3>Publications </h3>
-The Canadian Cluster Handbook (2019)
+The Canadian Cluster Handbook (2019)<br>
    - A comprehensive guide on developing and maintaining a cluster ecosystem in Canada.
    - ISBN: 978-1-927065-33-4
 
 <a href="https://www.competeprosper.ca/work/annual-reports/unfinished-business-ontario-since-the-great-recession">
-Unfinished Business: Ontario since the Great Recession</a> (2018) 
+Unfinished Business: Ontario since the Great Recession</a> (2018) <br>
   - A review of Ontario's economic and social performance over the past 17 years with emphasis on the effects of the Great Recession.
   - Prepared for Ontario’s Panel on Economic Growth & Prosperity.
   - ISBN: 978-1-927065-31-0
+</p>
 
-<br>
 <h3> Research projects </h3>
 
 <p>
