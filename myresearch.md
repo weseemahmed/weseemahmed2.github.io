@@ -3,6 +3,12 @@ layout: page
 title: Research
 subtitle: Some of the official projects I've worked on
 ---
+
+<p align="center">
+  <img alt="rural income"
+  src="{{ site.baseurl }}/img/icap-logo.png"/>
+</p>
+
 <h3>Publications </h3>
 The Canadian Cluster Handbook (2019)
    - A comprehensive guide on developing and maintaining a cluster ecosystem in Canada.
@@ -13,6 +19,7 @@ Unfinished Business: Ontario since the Great Recession (2018) </a>
   - A review of Ontario's economic and social performance over the past 17 years with emphasis on the effects of the Great Recession.
   - Prepared for Ontario’s Panel on Economic Growth & Prosperity.
   - ISBN: 978-1-927065-31-0
+
 
 <h3> Blog Posts </h3>
 <a href="https://www.competeprosper.ca/blog/rural-urban-divide-part-1">
