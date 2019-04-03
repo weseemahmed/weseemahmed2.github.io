@@ -25,7 +25,7 @@ Unfinished Business: Ontario since the Great Recession</a> (2018)
   <li> A review of Ontario's economic and social performance over the past 17 years with emphasis on the effects of the Great Recession.</li>
   <li> Prepared for Ontario’s Panel on Economic Growth & Prosperity.</li>
   <li> ISBN: 978-1-927065-31-0</li>
-  </ul>
+</ul>
 </p>
 
 <h3> Research projects </h3>
