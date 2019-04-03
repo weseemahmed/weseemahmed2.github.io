@@ -21,7 +21,7 @@ Unfinished Business: Ontario since the Great Recession</a> (2018)
   - Prepared for Ontario’s Panel on Economic Growth & Prosperity.
   - ISBN: 978-1-927065-31-0
 
-/n
+</n>
 <h3> Blog Posts </h3>
 <a href="https://www.competeprosper.ca/blog/rural-urban-divide-part-1">
 Rural-Urban Divide Part 1: Exploring the division</a> (2019)
