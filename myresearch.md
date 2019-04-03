@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Research
-subtitle: The more official projects I've worked on
+subtitle: Some of the official projects I've worked on
 ---
 <h2>Published with the Institute for Competitiveness & Prosperity </h2>
 The Canadian Cluster Handbook (2019)
