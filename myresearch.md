@@ -15,8 +15,8 @@ subtitle: Some of the official projects I've worked on
 <p>
 The Canadian Cluster Handbook (2019)<br>
   <ul>
-   <li>A comprehensive guide on developing and maintaining a cluster ecosystem in Canada.</li><br>
-   <li>ISBN: 978-1-927065-33-4</li><br>
+   <li>A comprehensive guide on developing and maintaining a cluster ecosystem in Canada.</li>
+   <li>ISBN: 978-1-927065-33-4</li>
    </ul>
 
 <a href="https://www.competeprosper.ca/work/annual-reports/unfinished-business-ontario-since-the-great-recession">
