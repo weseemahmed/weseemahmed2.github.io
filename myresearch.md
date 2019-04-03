@@ -23,6 +23,8 @@ Unfinished Business: Ontario since the Great Recession</a> (2018)
 
 <br>
 <h3> Research projects </h3>
+
+<p>
 <a href="https://www.competeprosper.ca/blog/rural-urban-divide-part-1">
 Rural-Urban Divide Part 1: Exploring the division</a> (2019)
 
@@ -40,4 +42,5 @@ Ontario Economic Update May 2018: One step forward, two steps back</a> (2018)
 
 <a href="https://www.competeprosper.ca/blog/greening-ontarios-economy-through-cap-and-trade-is-an-achievable-reality">
 Greening Ontario’s economy through cap and trade is an achievable reality</a> (2018)
+</p>
 
