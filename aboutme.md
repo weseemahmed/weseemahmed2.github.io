@@ -39,7 +39,7 @@ subtitle: Why you'd want to meet me
  </ul>
  
  <hr>
- <h4>Education </h4>
+ <h3>Education </h3>
  <hr>
  
   <p align="left">
