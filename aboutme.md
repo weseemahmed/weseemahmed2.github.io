@@ -25,7 +25,7 @@ subtitle: Why you'd want to meet me
 
 <p align="left">
   <img alt="uwo_logo"
-       width = "25%"
+       width = "12%"
   src="{{ site.baseurl }}/img/uwo.jpg"/>
 </p>
 
