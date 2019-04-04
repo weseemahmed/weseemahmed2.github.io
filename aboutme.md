@@ -8,7 +8,7 @@ subtitle: Why you'd want to meet me
 <hr>
 
 <p align="left">
-  <img alt="rural income"
+  <img alt="icp_logo"
        width = "25%"
   src="{{ site.baseurl }}/img/icap-logo.png"/>
 </p>
@@ -25,7 +25,7 @@ subtitle: Why you'd want to meet me
 
 <p align="left">
   <img alt="uwo_logo"
-       width = "25%"
+       width = "12%"
   src="{{ site.baseurl }}/img/uwo.jpg"/>
 </p>
 
@@ -37,6 +37,33 @@ subtitle: Why you'd want to meet me
   </li>
   <li> Prepared results and policy recommendations for publication in a research journal. </li>
  </ul>
+ 
+ <hr>
+ <h4>Education </h4>
+ <hr>
+ 
+ <p align="left">
+  <img alt="tse_logo"
+       width = "12%"
+  src="{{ site.baseurl }}/img/tse.png"/>
+</p>
+ 
+<h4>Toulouse School of Economics </h4>
+MA Economics, Class of 2016
+
+<hr>
+
+<p align="left">
+  <img alt="uwo_logo"
+       width = "12%"
+  src="{{ site.baseurl }}/img/uwo.jpg"/>
+</p>
+
+<h4> Western University </h4>
+BA Economics, Class of 2014
+ 
+ 
+ 
 My name is Weseem Ahmed. By day I'm a humble policy analyst and by night I rock the data world. Well, at least as much as a data enthusiast could!
 
 ### My history
