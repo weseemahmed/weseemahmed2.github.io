@@ -6,13 +6,13 @@ subtitle: Why you'd want to meet me
 <hr>
 <h3> Experience </h3>
 
-<p align="center">
+<p align="left">
   <img alt="rural income"
-       width = "50%"
+       width = "25%"
   src="{{ site.baseurl }}/img/icap-logo.png"/>
 </p>
 
-<h4> Policy Analyst and Clusters Specialist </h4>
+<h4> Policy Analyst and Clusters Specialist </h4> <br>
 <ul>
   <li> Managed end-to-end process of the Institute’s publications including developing proposals, gathering and analyzing data, and writing policy recommendations.
  </li> 
