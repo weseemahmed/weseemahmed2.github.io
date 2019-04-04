@@ -5,7 +5,7 @@ subtitle: Some of the official projects I've worked on
 ---
 
 <p align="center">
-  <img alt="rural income"
+  <img alt="icp logo"
        width = "50%"
   src="{{ site.baseurl }}/img/icap-logo.png"/>
 </p>
