@@ -25,7 +25,7 @@ subtitle: Why you'd want to meet me
 
 <p align="left">
   <img alt="uwo_logo"
-       width = "12%"
+       width = "20%"
   src="{{ site.baseurl }}/img/uwo.jpg"/>
 </p>
 
@@ -56,6 +56,8 @@ Certificate of Data Science, 2019
   <li>Big Data Management Systems & Tools </li>
   <li>Machine Learning </li>
 </ul>
+
+<hr>
  
  <p align="left">
   <img alt="tse_logo"
