@@ -1,8 +1,26 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to know more about me
+subtitle: Why you'd want to meet me
 ---
+<hr>
+<h3> Experience </h3>
+
+<p align="center">
+  <img alt="rural income"
+       width = "50%"
+  src="{{ site.baseurl }}/img/icap-logo.png"/>
+</p>
+
+<h4> Policy Analyst and Clusters Specialist </h4>
+<ul>
+  <li> Managed end-to-end process of the Institute’s publications including developing proposals, gathering and analyzing data, and writing policy recommendations.
+ </li> 
+  <li> Consulted with external stakeholders and business partners to host the 21st TCI Network Global Conference, an international gathering of 400 economists and clusters specialists. </li> 
+  <li> Conducted economic and statistical analyses on employment data to determine industry concentration levels across Canada. </li> 
+</ul>  
+
+<hr>
 
 My name is Weseem Ahmed. By day I'm a humble policy analyst and by night I rock the data world. Well, at least as much as a data enthusiast could!
 
