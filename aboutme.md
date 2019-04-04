@@ -5,6 +5,7 @@ subtitle: Why you'd want to meet me
 ---
 <hr>
 <h3> Experience </h3>
+<hr>
 
 <p align="left">
   <img alt="rural income"
@@ -12,7 +13,7 @@ subtitle: Why you'd want to meet me
   src="{{ site.baseurl }}/img/icap-logo.png"/>
 </p>
 
-<h4> Policy Analyst and Clusters Specialist </h4> <br>
+<h4> Policy Analyst and Clusters Specialist </h4> 
 <ul>
   <li> Managed end-to-end process of the Institute’s publications including developing proposals, gathering and analyzing data, and writing policy recommendations.
  </li> 
@@ -22,6 +23,20 @@ subtitle: Why you'd want to meet me
 
 <hr>
 
+<p align="left">
+  <img alt="uwo_logo"
+       width = "25%"
+  src="{{ site.baseurl }}/img/uwo.jpg"/>
+</p>
+
+<h4> Economic Analyst </h4> 
+<ul>
+  <li> Developed a research proposal to analyze easing volatility in the Canadian dollar using sovereign wealth funds, allowing for simplified interpretation and the forecasting of oil price effects on the economy.
+ </li>
+  <li> Applied statistical, mathematical and computational methods to clean and analyze quantitative data. 
+  </li>
+  <li> Prepared results and policy recommendations for publication in a research journal. </li>
+ </ul>
 My name is Weseem Ahmed. By day I'm a humble policy analyst and by night I rock the data world. Well, at least as much as a data enthusiast could!
 
 ### My history
