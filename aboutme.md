@@ -15,10 +15,10 @@ subtitle: Why you'd want to meet me
 
 <h4> Policy Analyst and Clusters Specialist </h4> 
 <ul>
-  <li> Managed end-to-end process of the Institute’s publications including developing proposals, gathering and analyzing data, and writing policy recommendations.
+  <li> Published seminal reports on the state of Ontario’s economy and a guideline for cluster-based regional economic development.
  </li> 
-  <li> Consulted with external stakeholders and business partners to host the 21st TCI Network Global Conference, an international gathering of 400 economists and clusters specialists. </li> 
-  <li> Conducted economic and statistical analyses on employment data to determine industry concentration levels across Canada. </li> 
+  <li> Engaged with stakeholders and partners to host the 21st TCI Network Global Conference, a gathering of 340 cluster actors and specialists from 37 countries. </li> 
+  <li> Managed end-to-end logistics for analytical research projects pertinent to Ontario’s public policy. </li> 
 </ul>  
 
 <hr>
@@ -29,13 +29,13 @@ subtitle: Why you'd want to meet me
   src="{{ site.baseurl }}/img/uwo.jpg"/>
 </p>
 
-<h4> Economic Analyst </h4> 
+<h4> Economic Research Assistant </h4> 
 <ul>
-  <li> Developed a research proposal to analyze easing volatility in the Canadian dollar using sovereign wealth funds, allowing for simplified interpretation and the forecasting of oil price effects on the economy.
+  <li> Developed a forecasting model to analyze the effects of sovereign wealth funds on Canadian exchange rate volatility.
  </li>
-  <li> Applied statistical, mathematical and computational methods to clean and analyze quantitative data. 
+  <li> Applied statistical and computational methodologies to clean and analyze  data. 
   </li>
-  <li> Prepared results and policy recommendations for publication in a research journal. </li>
+  <li> Communicated my findings to superiors and economists at the Department of Finance. </li>
  </ul>
  
  <hr>
@@ -49,7 +49,7 @@ subtitle: Why you'd want to meet me
 </p>
  
 <h4>University of Toronto </h4>
-Certificate of Data Science, 2019
+Certificate of Data Science, Aug. 2019 (expected)
 <ul>
   <li>Foundations of Data Science </li>
   <li>Statistics for Data Science </li>
