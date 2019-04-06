@@ -66,7 +66,7 @@ Certificate of Data Science, Aug. 2019 (expected)
 </p>
  
 <h4>Toulouse School of Economics </h4>
-MA Economics, Class of 2016
+Master of Arts in Economics, Class of 2016
 
 <hr>
 
@@ -77,4 +77,4 @@ MA Economics, Class of 2016
 </p>
 
 <h4> Western University </h4>
-BA Economics, Class of 2014
+Bachelor of Arts in Economics, Class of 2014
