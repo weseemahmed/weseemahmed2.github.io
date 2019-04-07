@@ -52,7 +52,7 @@ Greening Ontario’s economy through cap and trade is an achievable reality</a> 
 </p>
 
 
-<a href="https://drive.google.com/file/d/1U_Fm8C3PatmMdVif3HvaNUXwIS3tp9db/preview">
+<a href="https://drive.google.com/file/d/1U_Fm8C3PatmMdVif3HvaNUXwIS3tp9db/view">
   Mitigating Dutch Disease in Canada Through The Use of Sovereign Wealth Funds
 </a> (2016)
 
