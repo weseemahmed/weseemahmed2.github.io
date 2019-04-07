@@ -51,7 +51,7 @@ Ontario Economic Update May 2018: One step forward, two steps back</a> (2018)<br
 Greening Ontario’s economy through cap and trade is an achievable reality</a> (2018)<br>
 </p>
 
-<h3 align="centre"> Academic Research </h3>
+<h3 align="center"> Academic Research </h3>
 
 <a href="https://drive.google.com/file/d/1U_Fm8C3PatmMdVif3HvaNUXwIS3tp9db/view">
   Mitigating Dutch Disease in Canada Through The Use of Sovereign Wealth Funds
