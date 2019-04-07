@@ -61,7 +61,7 @@ Greening Ontario’s economy through cap and trade is an achievable reality</a> 
   Mitigating Dutch Disease in Canada Through The Use of Sovereign Wealth Funds
 </a> (2016)
 
- <p align="left">
+ <p align="centre">
   <img alt="tse_logo"
        width = "50%"
   src="{{ site.baseurl }}/img/tse.png"/>
