@@ -29,7 +29,7 @@ Unfinished Business: Ontario since the Great Recession</a> (2018)
 </ul>
 </p>
 
-<h3> Research projects </h3>
+<h3><centre> Research projects </centre></h3>
 
 <p>
 <a href="https://www.competeprosper.ca/blog/rural-urban-divide-part-1">
