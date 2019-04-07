@@ -49,10 +49,10 @@ Ontario Economic Update May 2018: One step forward, two steps back</a> (2018)<br
 
 <a href="https://www.competeprosper.ca/blog/greening-ontarios-economy-through-cap-and-trade-is-an-achievable-reality">
 Greening Ontario’s economy through cap and trade is an achievable reality</a> (2018)<br>
-</p>
+</p> <br>
 
-<h3 align="center"> Academic Research </h3>
-
+<h3> Academic Research </h3>
+<p>
 <a href="https://drive.google.com/file/d/1U_Fm8C3PatmMdVif3HvaNUXwIS3tp9db/view">
   Mitigating Dutch Disease in Canada Through The Use of Sovereign Wealth Funds
 </a> (2016)
@@ -60,3 +60,4 @@ Greening Ontario’s economy through cap and trade is an achievable reality</a> 
 <a href="https://drive.google.com/file/d/1A6fKsrn4ucaAhbJk60Ylp-CfXWitrdBy/view"> 
   Effects of Democratic Institutions on Climate Change Mitigation
 </a>(2015)
+</p>
