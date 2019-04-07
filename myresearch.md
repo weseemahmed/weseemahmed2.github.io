@@ -53,21 +53,9 @@ Greening Ontario’s economy through cap and trade is an achievable reality</a> 
 
 <h3> Academic Research </h3>
 
-<p align="centre">
-  <img alt="uwo_logo"
-       width = "12%"
-  src="{{ site.baseurl }}/img/uwo.jpg"/>
-</p>
-
 <a href="https://drive.google.com/file/d/1U_Fm8C3PatmMdVif3HvaNUXwIS3tp9db/view">
   Mitigating Dutch Disease in Canada Through The Use of Sovereign Wealth Funds
 </a> (2016)
-
- <p align="centre">
-  <img alt="tse_logo"
-       width = "12%"
-  src="{{ site.baseurl }}/img/tse.png"/>
-</p>
 
 <a href="https://drive.google.com/file/d/1A6fKsrn4ucaAhbJk60Ylp-CfXWitrdBy/view"> 
   Effects of Democratic Institutions on Climate Change Mitigation
