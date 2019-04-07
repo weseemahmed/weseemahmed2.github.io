@@ -54,6 +54,6 @@ Greening Ontario’s economy through cap and trade is an achievable reality</a> 
 
 
 
-<a href="https://drive.google.com/file/d/1A6fKsrn4ucaAhbJk60Ylp-CfXWitrdBy/preview"> 
+<a href="https://drive.google.com/file/d/1A6fKsrn4ucaAhbJk60Ylp-CfXWitrdBy/view"> 
   Effects of Democratic Institutions on Climate Change Mitigation
 </a>(2015)
