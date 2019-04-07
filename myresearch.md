@@ -51,9 +51,11 @@ Ontario Economic Update May 2018: One step forward, two steps back</a> (2018)<br
 Greening Ontario’s economy through cap and trade is an achievable reality</a> (2018)<br>
 </p>
 
+<h3> Academic Research </h3>
+
 <p align="centre">
   <img alt="uwo_logo"
-       width = "50%"
+       width = "12%"
   src="{{ site.baseurl }}/img/uwo.jpg"/>
 </p>
 
@@ -63,7 +65,7 @@ Greening Ontario’s economy through cap and trade is an achievable reality</a> 
 
  <p align="centre">
   <img alt="tse_logo"
-       width = "50%"
+       width = "12%"
   src="{{ site.baseurl }}/img/tse.png"/>
 </p>
 
