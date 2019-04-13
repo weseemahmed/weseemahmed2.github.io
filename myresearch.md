@@ -32,6 +32,9 @@ Unfinished Business: Ontario since the Great Recession</a> (2018)
 <h3> Research projects </h3>
 
 <p>
+<a href="https://www.competeprosper.ca/blog/ontarios-2019-budget-the-impact-is-in-the-details">
+Ontario’s 2019 Budget: The impact is in the details</a> (2019) <br>  
+  
 <a href="https://www.competeprosper.ca/blog/rural-urban-divide-part-1">
 Rural-Urban Divide Part 1: Exploring the division</a> (2019) <br>
 
