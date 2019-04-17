@@ -13,7 +13,8 @@ subtitle: Some of the official projects I've worked on
 <h3>Publications </h3>
 
 <p>
-The Canadian Cluster Handbook (2019) <ul>
+<a href="https://www.competeprosper.ca/work/working-papers/the-canadian-cluster-handbook">  
+The Canadian Cluster Handbook </a> (2019) <ul>
    <li>A comprehensive guide on developing and maintaining a cluster ecosystem in Canada.</li>
    <li>ISBN: 978-1-927065-33-4</li>
    </ul>
