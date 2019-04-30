@@ -1,7 +1,7 @@
    
 <div style="position:relative;padding-top:56.25%;">
   <iframe src="https://weseemahmed.shinyapps.io/cluster-map/" frameborder="0" allowfullscreen
-    style="position:absolute;top:0;left:0;width:1000;height:1000;"></iframe>
+    style="position:absolute;top:0;left:0;width:1000px;height:1000px;"></iframe>
 </div>
 
 
