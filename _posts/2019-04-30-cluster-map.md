@@ -1,16 +1,7 @@
-div {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 0%; /* Change this till it fits the dimensions of your video */
-    position: relative;
-}
+<div id="content">
+    <iframe src="https://weseemahmed.shinyapps.io/cluster-map/" name="frame2" id="frame2" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+</div>
+<div id="block"></div>
+<div id="header"></div>
+<div id="footer"></div>
 
-div iframe {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-}
-<iframe src="https://weseemahmed.shinyapps.io/cluster-map/" style="border:none;width:1800px;height:1000px;padding:0;margin:0;"></iframe>
