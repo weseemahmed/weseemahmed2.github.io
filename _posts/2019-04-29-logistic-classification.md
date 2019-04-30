@@ -1,21 +1,19 @@
+---
+layout: post
+title: "Classifying credit defaulters"
+subtitle: "A machine learning model"
+author: "Weseem Ahmed "
+date: "April 29, 2019"
+comments: true
+categories: python
+tags: [machine learning]
+excerpt: This post builds a machine learning model using a multi-linear logistic regression to estimate which borrowers are more likely to default on their loans.
+output: html_document 
+---
 
-# Module 9: Introduction to Machine Learning Part 2
+# Multi-Linear Logistic Regression
 
-This module continues introduction to Machine Learning. It covers Logistic Regression, Support Vector Machines, Decision Trees and Random Forest algorithms.
-
-## Logistic Regression
-
-In the previous module, we considered the linear regression model, when both the target and the predictors are numerical values. 
-
-In this module, we will continue working with linear models and introduce __logistic regression__. 
-
-In many machine learning tasks, the goal is to classify objects. To perform such classification, the algorithms need to find the probability that an instance belongs to one class or another. 
-
-**Example: Spam filters**
-
-An automated spam filter estimates the probability that an incoming message is spam. The computed probability is compared to a pre-set threshold probability. In this case, 50% is a natural choice. If a harder filter is required the threshold can be set to a lower value, say 20%, but a harder filter would send more messages to the spam folder. 
-
-The model is trained on the labeled datasets, where each observation is labeled as 'spam' or 'ham' (ham is a label for not spam), and described by a number of features - the number of recipients, the count of specific words ("winner", "fantastic offer", "password") in the subject line and in the body of the message, and other criteria to classify the message.
+Logistic regressions are useful tools for classifying objects. The target variable is binary, either a yes or no, 1 or 0, that we try to estimate. By running the regression on only a subset of data and using the results to estimate it on the rest, we can build a machine learning model. In this example, I'll build a model estimating which consumers are most likely to default on their credit loans from a set of variables.
 
 **Example: Credit Card default risk** 
 
@@ -33,9 +31,6 @@ plt.figure(figsize=(11, 8))
 import warnings
 warnings.filterwarnings("ignore")
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -247,19 +242,17 @@ For the probabilities, there is another method: `predict_proba`. The last method
 The `sklearn` Logistic Regressor is tunable by __hyperparameter C__ (parameter of the learning algorithm), this parameter controls the 'hardness' of the decision. The larger C is, the harder a classification decision will be to make. 
 As an exercise, try to build prediction models with different hyperparameter value C in a range from 1 to 1e9.
 
-## Linear models and multi-variable logistic regression
+## Building our model
 
 Next, we will build a multi-variable logistic model. The model will be trained on the credit card risk dataset. The training dataset consists of 300 marked instances and for each instance the information about Credit Card Payment (`CC_Payments`) is given together with card owner's wage (`Wage`), cost of living (`Cost_Living`), mortgage payment (`Mtg`) and the amount the card owner spends on vacations (`Vacations`). The last column, `Default`, contains a categorical type value: `Yes` or `No`.
 
 
 ```python
-CR = pd.read_csv('CreditRisk.csv')
+CR = pd.read_csv('CreditRisk.csv') # The data is available <a href = https://github.com/weseemahmed/weseemahmed.github.io/tree/master/_data/CreditRisk.csv> here </a>
+
 Credit_risk = CR[["CC_Payments", 'Wage', 'Cost_Living', 'Mtg','Vacations', 'Default']]
 Credit_risk.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -337,9 +330,6 @@ Credit_risk.head()
 </table>
 </div>
 
-
-
-
 ```python
 #Plot the pairwise plot using the seaborn library. 
 #Notice the parameter 'hue' set to the values in 'Default' column
@@ -367,13 +357,13 @@ Credit_risk['Default'].value_counts()
 
 ### Unbalanced data
 
-For best results using logistic regression modeling, the data should be balanced, meaning the number of positive instances should be comparable to the number of negative instances. In the Credit_risk dataframe, there are approximately twice as many observations with negative target value as those with positive. This difference is not too big, so we can proceed with unmodified dataset. 
+For the most accurate results when using logistic regression modeling, the data should be balanced (ie. the number of positive instances should be comparable to the number of negative instances). In the Credit_risk dataframe, there are approximately twice as many observations with negative target value as those with positive. This difference is not too big, so we can proceed with unmodified dataset. 
 
 **NOTE:** Classification algorithms are very sensitive to unbalanced data and for strongly unbalanced datasets, the issue has to be properly addressed before training. The easiest solutions would be: 
 * to reduce size of oversampled class or
 * to inflate the undersampled class.
 
-To reduce an oversampled class, it is recommended to select that class into a separate dataframe, shuffle the rows and select each n-th row from dataframe; number n is chosen so that two datasets - positive and negative classes - will have comparible sizes.
+To reduce an oversampled class, it is recommended to select that class into a separate dataframe, shuffle the rows and select each n-th row from dataframe; the number n is chosen so that two datasets - positive and negative classes - will have comparible sizes.
 
 To inflate the undersampled class, duplicate the undersampled class so that the final dataset has an approximetely equal number of positive and negative instances. Again, the recipe would be to separate into two datasets by the class, duplicate the rows of the undersampled class as many times as required, and then combine the datasets.
 
@@ -388,9 +378,6 @@ Credit_risk['default_enum'] = Credit_risk['Default'].map({'Yes': 1, 'No': 0})
 
 Credit_risk.describe()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -495,11 +482,9 @@ Credit_risk.describe()
 </table>
 </div>
 
-
-
 This example has 300 observations, it is not so obvious that observations should be interpreted statistically. 
 
-To illustrate this point, we will split the rows into 14 bins by wage and then calculate the number of observations and the number of defaults in each group. The description of the `Credit_risk` dataset shows wage minimum and maximum values. Based on these values, the wage bins are defined as:
+To illustrate this point, we will split the rows into 14 bins by wage and then calculate the number of observations and the number of defaults in each group. The description of the `Credit_risk` dataset shows wage minimum and maximum values. Based on these values, we'll define the wage bins as:
 
 
 ```python
@@ -649,8 +634,6 @@ credit_risk_by_wage.reset_index()
 </div>
 
 
-
-
 ```python
 plt.figure(figsize=(11, 8))
 plt.xlabel('wage group', fontsize=18)
@@ -671,7 +654,7 @@ This was just an illustration of the **probabilistic** approach to larger datase
 
 The Generalized Linear Model applies a **statistical** model for each observation; the response variable is modeled using a probability distribution and then parameter of the distribution fitted to predictors' values.
 
-As was stated above, the goal of logistic regression is to find the probability that an instance belongs to a positive class. In the Challenger example, it was obvious that at any given temperature, there is a certain probability of an O-ring failure. The point is that logistic regression is a two-stage process:
+As was stated above, the goal of logistic regression is to find the probability that an instance belongs to a positive class. Doing this for logistic regressions is a two-stage process:
 * first, the probabilities have to be estimated;
 * then, probabilities are fitted to a linear model via a transformation function.
 
@@ -807,9 +790,6 @@ log_reg = LogisticRegression(C=1e10)
 #Train the model
 log_reg.fit(X_cr, Y_cr)
 ```
-
-
-
 
     LogisticRegression(C=10000000000.0, class_weight=None, dual=False,
               fit_intercept=True, intercept_scaling=1, max_iter=100,
