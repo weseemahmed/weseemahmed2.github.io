@@ -341,8 +341,8 @@ Credit_risk.head()
 
 
 ```python
-'''Plot the pairwise plot using the seaborn library. 
-Notice the parameter 'hue' set to the values in 'Default' column'''
+#Plot the pairwise plot using the seaborn library. 
+#Notice the parameter 'hue' set to the values in 'Default' column
 
 import seaborn as sns
 
@@ -360,7 +360,7 @@ Before building the model, the count of each classes in the dataset should be in
 
 
 ```python
-# '''Count the number of unique values in column "Default".'''
+# Count the number of unique values in column "Default".
 
 Credit_risk['Default'].value_counts()
 ```
@@ -381,8 +381,8 @@ Another approach is to __stratify__ the dataset, that is to fetch randomly selec
 
 
 ```python
-'''There is one categorical type in the datasets (column 'Default').
-Convert it to 1 and 0 before training model.'''
+#There is one categorical type in the datasets (column 'Default').
+#Convert it to 1 and 0 before training model.
 
 Credit_risk['default_enum'] = Credit_risk['Default'].map({'Yes': 1, 'No': 0})
 
@@ -497,7 +497,7 @@ Credit_risk.describe()
 
 
 
-In the Challenger example, there are only 24 observations and the corresponding graph demonstrates the statistical meaning of the observations. In the larger datasets, for example Credit Card dataset with 300 observations, it is not so obvious that observations should be interpreted statistically. 
+This example has 300 observations, it is not so obvious that observations should be interpreted statistically. 
 
 To illustrate this point, we will split the rows into 14 bins by wage and then calculate the number of observations and the number of defaults in each group. The description of the `Credit_risk` dataset shows wage minimum and maximum values. Based on these values, the wage bins are defined as:
 
@@ -506,21 +506,20 @@ To illustrate this point, we will split the rows into 14 bins by wage and then c
 wage_bins = [55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000, 100000, 105000, 110000, 115000, 120000]
 wage_bin_labels= ['60', '65', '70', '75', '80', '85', '90', '95', '100', '105', '110', '115', '120']
 
-
 Credit_risk['wage_group'] = pd.cut(Credit_risk.Wage, wage_bins, right=False, labels=wage_bin_labels)
 ```
 
 
 ```python
-'''Group the rows by the wage group, count number of rows and defaults in each group.'''
+#Group the rows by the wage group, count number of rows and defaults in each group.
 
 credit_risk_by_wage= Credit_risk[['default_enum', 'wage_group']].groupby(['wage_group']).agg({'default_enum': 'sum', 'wage_group': 'count'})
 
 
-'''Rename columns'''
+#Rename columns
 credit_risk_by_wage.columns = ['default', 'Count']
 
-'''and calculate the frequency of the default in each group.'''
+#and calculate the frequency of the default in each group.
 credit_risk_by_wage['Proportion'] = credit_risk_by_wage.default / credit_risk_by_wage.Count
 
 credit_risk_by_wage.reset_index()
@@ -698,20 +697,20 @@ plt.scatter(Credit_risk.Vacations, Credit_risk.Mtg, c=Credit_risk.default_enum)
 
 
 ```python
-'''Set the Vacations and Mtg as predictors and add constant to predictors for Intercept. 
-The target, the value which we are trying to predict is default_enum.'''
+#Set the Vacations and Mtg as predictors and add constant to predictors for Intercept. 
+The target, the value which we are trying to predict is default_enum.
 
 exod_list = Credit_risk[['Vacations', 'Mtg']]
 exod_list=sm.add_constant(exod_list)
 exod_list
 
-'''Train the model'''
+#Train the model
 glm_vacations_mtg = sm.GLM(Credit_risk.default_enum, exod_list)
 
 res_multi = glm_vacations_mtg.fit()
 
 
-'''Get the summary of the regression'''
+#Get the summary of the regression
 res_multi.summary()
 ```
 
@@ -764,7 +763,7 @@ res_multi.summary()
 
 
 ```python
-'''To get parameters of the fit'''
+#To get parameters of the fit
 
 res_multi.params
 ```
@@ -794,7 +793,7 @@ plt.legend()
 
 
 ```python
-'''Set the Vacations and Mtg as predictors and add constant to predictors for Intercept. 
+#Set the Vacations and Mtg as predictors and add constant to predictors for Intercept. 
 The target is default_enum.'''
 
 X_cr = Credit_risk[['Vacations', 'Mtg']]
@@ -802,10 +801,10 @@ Y_cr = Credit_risk['default_enum'].values
 
 from sklearn.linear_model import LogisticRegression
 
-'''Instantiate  the model'''
+#Instantiate  the model
 log_reg = LogisticRegression(C=1e10)
 
-'''Train the model'''
+#Train the model
 log_reg.fit(X_cr, Y_cr)
 ```
 
@@ -821,15 +820,15 @@ log_reg.fit(X_cr, Y_cr)
 
 
 ```python
-'''Predict the targets'''
+#Predict the targets
 
 Y_log_reg_pred = log_reg.predict(X_cr)
 ```
 
 
 ```python
-'''To estimate goodness of the fit we evalute the accuracy score,
-which counts the number of correctly predicted observations.'''
+#To estimate goodness of the fit we evalute the accuracy score,
+which counts the number of correctly predicted observations.
 
 from sklearn.metrics import accuracy_score
 
