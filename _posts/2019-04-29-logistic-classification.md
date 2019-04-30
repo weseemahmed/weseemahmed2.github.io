@@ -45,196 +45,7 @@ warnings.filterwarnings("ignore")
     .dataframe thead th {
         text-align: right;
     }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>Temperature</th>
-      <th>DamageIncident</th>
-      <th>Intercept</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>04/12/1981</td>
-      <td>66</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>11/12/1981</td>
-      <td>70</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3/22/82</td>
-      <td>69</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>6/27/82</td>
-      <td>80</td>
-      <td>NaN</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>01/11/1982</td>
-      <td>68</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>04/04/1983</td>
-      <td>67</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>6/18/83</td>
-      <td>72</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8/30/83</td>
-      <td>73</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>11/28/83</td>
-      <td>70</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>02/03/1984</td>
-      <td>57</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>04/06/1984</td>
-      <td>63</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>8/30/84</td>
-      <td>70</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>10/05/1984</td>
-      <td>78</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>11/08/1984</td>
-      <td>67</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>1/24/85</td>
-      <td>53</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>04/12/1985</td>
-      <td>67</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>4/29/85</td>
-      <td>75</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>6/17/85</td>
-      <td>70</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>7/29/85</td>
-      <td>81</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>8/27/85</td>
-      <td>76</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>10/03/1985</td>
-      <td>79</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>10/30/85</td>
-      <td>75</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>11/26/85</td>
-      <td>76</td>
-      <td>0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>01/12/1986</td>
-      <td>58</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>1/28/86</td>
-      <td>31</td>
-      <td>Challenger Accident</td>
-      <td>1.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+
 
 The method `predict` of `sklearn` Logistic Regression predicts the target value, not the probabilities.
 For the probabilities, there is another method: `predict_proba`. The last method returned two curves: one shows the probability of 'damage' and the other shows the probability of 'no damage'.
@@ -248,7 +59,7 @@ Next, we will build a multi-variable logistic model. The model will be trained o
 
 
 ```python
-CR = pd.read_csv('CreditRisk.csv') # The data is available <a href = https://github.com/weseemahmed/weseemahmed.github.io/tree/master/_data/CreditRisk.csv> here </a>
+CR = pd.read_csv('CreditRisk.csv') # The data is available <a href = "https://github.com/weseemahmed/weseemahmed.github.io/tree/master/_data/CreditRisk.csv"> here </a>
 
 Credit_risk = CR[["CC_Payments", 'Wage', 'Cost_Living', 'Mtg','Vacations', 'Default']]
 Credit_risk.head()
@@ -807,8 +618,8 @@ Y_log_reg_pred = log_reg.predict(X_cr)
 
 
 ```python
-#To estimate goodness of the fit we evalute the accuracy score,
-which counts the number of correctly predicted observations.
+#To estimate goodness of the fit, we evalute the accuracy score
+#which counts the number of correctly predicted observations.
 
 from sklearn.metrics import accuracy_score
 
