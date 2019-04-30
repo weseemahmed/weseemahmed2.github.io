@@ -588,7 +588,7 @@ plt.legend()
 
 ```python
 #Set the Vacations and Mtg as predictors and add constant to predictors for Intercept. 
-The target is default_enum.'''
+The target is default_enum.
 
 X_cr = Credit_risk[['Vacations', 'Mtg']]
 Y_cr = Credit_risk['default_enum'].values
