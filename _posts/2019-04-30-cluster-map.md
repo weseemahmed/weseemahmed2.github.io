@@ -1,2 +1,2 @@
 
-<p align="center"><iframe src="https://weseemahmed.shinyapps.io/cluster-map/" style="border:none;width:1800px;height:1000px;"></iframe></p>
+<p align="left"><iframe src="https://weseemahmed.shinyapps.io/cluster-map/" style="border:none;width:1800px;height:1800px;"></iframe></p>
