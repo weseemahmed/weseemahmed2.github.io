@@ -241,53 +241,6 @@ warnings.filterwarnings("ignore")
 </table>
 </div>
 
-### `scikit-learn` Logistic Regression
-
-The _Logistic Regressor_ is also part of `scikit-learn` Python library. For demonstration we shall apply it to the Challenge disaster data.
-
-'''scikit-learn library also has Logistic Regression as part of linear-model block.'''
-
-from sklearn.linear_model import LogisticRegression
-
-'''Instantiate the model'''
-
-
-log_reg_challenger = LogisticRegression(C=1e9)
-
-X_cd_logreg = challenger['Temperature'].values.reshape(-1,1)
-Y_cd_logreg = challenger['DamageIncident'].values
-
-'''fit the model to oberved data'''
-
-log_reg_challenger.fit(X_cd_logreg, Y_cd_logreg)
-
-
-```python
-X_pred = np.linspace(50, 85, 1000).reshape(-1,1)
-plt.scatter(challenger["Temperature"], challenger["DamageIncident"])
-
-'''And predict the response for X_pred values.'''
-
-Y_pred= log_reg_challenger.predict(X_pred)
-plt.plot(X_pred, Y_pred)
-plt.xlabel('Temperature, F', fontsize=18)
-plt.ylabel('Damage Incident', fontsize=18)
-
-plt.plot(X_pred, log_reg_challenger.predict_proba(X_pred))
-```
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x1151d1da0>,
-     <matplotlib.lines.Line2D at 0x1151d1eb8>]
-
-
-
-
-![png](output_28_1.png)
-
-
 The method `predict` of `sklearn` Logistic Regression predicts the target value, not the probabilities.
 For the probabilities, there is another method: `predict_proba`. The last method returned two curves: one shows the probability of 'damage' and the other shows the probability of 'no damage'.
 
@@ -395,10 +348,8 @@ import seaborn as sns
 
 sns.pairplot(Credit_risk, hue='Default')
 ```
-    <seaborn.axisgrid.PairGrid at 0x113fd64a8>
-
 <p align="center">
-  <img alt="chord diagram"
+  <img alt="credit risk"
   src="{{ site.baseurl }}/img/credit_risk.png"/>
 </p>
 
@@ -710,11 +661,8 @@ plt.yticks(fontsize=18)
 
 plt.scatter(credit_risk_by_wage.index , credit_risk_by_wage.Proportion)
 ```
-    <matplotlib.collections.PathCollection at 0x116745278>
-
-
 <p align="center">
-  <img alt="chord diagram"
+  <img alt="defaults by wage group"
   src="{{ site.baseurl }}/img/20190429-wage_group_proportion.png"/>
 </p>
 
@@ -743,16 +691,8 @@ plt.yticks(fontsize=16)
 plt.scatter(Credit_risk.Vacations, Credit_risk.Mtg, c=Credit_risk.default_enum)
 ```
 
-
-
-
-    <matplotlib.collections.PathCollection at 0x116917ba8>
-
-
-
-
 <p align="center">
-  <img alt="chord diagram"
+  <img alt="mortgages and vacations"
   src="{{ site.baseurl }}/img/20190429-mtg_vac.png"/>
 </p>
 
@@ -847,16 +787,10 @@ plt.plot(Credit_risk.Vacations, (0.5388/0.000009) - (0.00002198/0.000009082)* Cr
 plt.legend()
 ```
 
-
-
-
-    <matplotlib.legend.Legend at 0x11696a748>
-
-
-
-
-![png](output_48_1.png)
-
+<p align="center">
+  <img alt="mortgages and vacations"
+  src="{{ site.baseurl }}/img/20190429-default_fit_model.png"/>
+</p>
 
 
 ```python
