@@ -20,15 +20,15 @@ output: html_document
   src="{{ site.baseurl }}/img/20190504Toronto_prices.PNG"/>
 </p>
 
-Toronto is notorious for sky high prices so I decided to see just how high they reach with a 3D visualization. I use two data sources, <a href = "http://maps.library.utoronto.ca/cgi-bin/files.pl?idnum=151"> a shapefile of Toronto's neighbourhoods </a>, 
+Toronto is notorious for sky high prices so I decided to see just how high they reach with a 3D visualization. I use two data sources: <a href = "http://maps.library.utoronto.ca/cgi-bin/files.pl?idnum=151"> a shapefile of Toronto's neighbourhoods </a>, 
 and a list of <a href = "https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/"> home prices per each
-neighbourhood </a>. 
+neighbourhood</a>. 
 
 ### Code
 
 First I read in the shapefile data as a polygon (personal preference, I think it looks cooler in the plot), followed by the home price data.
 Make sure to change the `Neighbourhood ID` column name to just `ID` so we can merge it with the shapefile. Next, I modify `Home.Prices` by 
-dividing by 50 just so the columns we'll generate are not too high and difficult to visualize.
+dividing by 50 just so that the columns we'll generate are not too high and difficult to visualize.
 
 ```r
 # Need to transform coordinate system to 4326 to be compatible with WebGL.
@@ -40,7 +40,7 @@ tor_data$Home.Prices <- tor_data$Home.Prices/50
 tor_mapdata <- merge(tor_shape, tor_data)
 ```
 
-Once we have load in our files and merge them by `ID` and now it's ready to be plotted.
+Once we have loaded in our files and merged them by `ID`, we are now ready to be plot.
 
 ```r
 mapdeck(token=key, style = mapdeck_style("dark"), pitch = 45, location = c(-79.34, 43.71), zoom = 3) %>%
