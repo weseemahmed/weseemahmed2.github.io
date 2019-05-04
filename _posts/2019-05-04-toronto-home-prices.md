@@ -30,7 +30,8 @@ Make sure to change the `Neighbourhood ID` column name to just `ID` so we can me
 dividing by 50 just so the columns we'll generate are not too high and difficult to visualize.
 
 ```r
-tor_shape <- st_read(".../Toronto shapefiles") %>% st_transform(4326) # Need to transform coordinate system to 4326 to be compatible with WebGL.
+# Need to transform coordinate system to 4326 to be compatible with WebGL.
+tor_shape <- st_read(".../Toronto shapefiles") %>% st_transform(4326) 
 
 tor_data <- read.csv(".../Toronto_econ_data.csv") 
 tor_data$Home.Prices <- tor_data$Home.Prices/50
