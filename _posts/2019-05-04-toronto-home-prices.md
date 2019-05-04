@@ -7,6 +7,7 @@ date: "May 4, 2019"
 comments: true
 categories: rblogging
 tags: [Mapdeck]
+img_url: /includes/20190504Toronto_prices.PNG
 my_variable:: tor_price_map.html
 excerpt: Here I visualize what which Toronto neighbourhoods are the most expensive with a 3D bar graph.
 output: html_document 
@@ -16,7 +17,7 @@ output: html_document
 
 <p align="center">
   <img alt="tor_price_image"
-  src="{{ site.baseurl }}/img/2019-05-04-Toronto_prices.PNG"/>
+  src="{{ site.baseurl }}/img/20190504Toronto_prices.PNG"/>
 </p>
 
 Toronto is notorious for sky high prices so I decided to see just how high they reach with a 3D visualization. I use two data sources, <a href = "http://maps.library.utoronto.ca/cgi-bin/files.pl?idnum=151"> a shapefile of Toronto's neighbourhoods </a>, 
@@ -50,4 +51,4 @@ mapdeck(token=key, style = mapdeck_style("dark"), pitch = 45, location = c(-79.3
 ### Instructions
 Zoom in or out, press "ctrl" while clicking and dragging to change angle and rotation.
 
-{% include tor_prices_map.html %}
+{% include tor_prices_map.html%}
