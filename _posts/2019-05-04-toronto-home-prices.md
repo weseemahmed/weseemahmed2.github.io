@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Toronto Home Prices by Neighbourhood"
-subtitle: "A 3D Visualization"
+subtitle: "A 2.5D Visualization"
 author: "Weseem Ahmed "
 date: "May 4, 2019"
 comments: true
@@ -9,7 +9,7 @@ categories: rblogging
 tags: [Mapdeck]
 img_url: /includes/20190504Toronto_prices.PNG
 my_variable: tor_price_map.html
-excerpt: Here I visualize what which Toronto neighbourhoods are the most expensive with a 3D bar graph.
+excerpt: Here I visualize what which Toronto neighbourhoods are the most expensive with a 2.5D bar graph.
 output: html_document 
 ---
 
@@ -20,7 +20,7 @@ output: html_document
   src="{{ site.baseurl }}/img/20190504Toronto_prices.PNG"/>
 </p>
 
-Toronto is notorious for sky high prices so I decided to see just how high they reach with a 3D visualization. I use two data sources: <a href = "http://maps.library.utoronto.ca/cgi-bin/files.pl?idnum=151"> a shapefile of Toronto's neighbourhoods </a>, 
+Toronto is notorious for sky high prices so I decided to see just how high they reach with a dD visualization. I use two data sources: <a href = "http://maps.library.utoronto.ca/cgi-bin/files.pl?idnum=151"> a shapefile of Toronto's neighbourhoods </a>, 
 and a list of <a href = "https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/"> home prices per each
 neighbourhood</a>. 
 
