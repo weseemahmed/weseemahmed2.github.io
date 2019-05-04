@@ -8,12 +8,12 @@ comments: true
 categories: rblogging
 tags: [Mapdeck]
 img_url: /includes/20190504Toronto_prices.PNG
-my_variable:: tor_price_map.html
+my_variable: tor_price_map.html
 excerpt: Here I visualize what which Toronto neighbourhoods are the most expensive with a 3D bar graph.
 output: html_document 
 ---
 
-## Toronto home prices by neighbourhood, using Uber's WebGL Javascrip library
+## Toronto home prices by neighbourhood, using Uber's WebGL Javascript library
 
 <p align="center">
   <img alt="tor_price_image"
