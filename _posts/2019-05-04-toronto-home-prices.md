@@ -19,8 +19,7 @@ output: html_document
   src="{{ site.baseurl }}/img/2019-05-04-Toronto_prices.png"/>
 </p>
 
-### Toronto is notorious for sky high prices so I decided to see just how high they reach with a 3D visualization. I use two data sources, 
-<a href = "http://maps.library.utoronto.ca/cgi-bin/files.pl?idnum=151"> a shapefile of Toronto's neighbourhoods </a>, 
+Toronto is notorious for sky high prices so I decided to see just how high they reach with a 3D visualization. I use two data sources, <a href = "http://maps.library.utoronto.ca/cgi-bin/files.pl?idnum=151"> a shapefile of Toronto's neighbourhoods </a>, 
 and a list of <a href = "https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/"> home prices per each
 neighbourhood </a>. 
 
