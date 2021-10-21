@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Birth of a graph</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="scrollable.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Birth of a graph
+## Press the arrow keys to continue
+
+---
+
+
+&lt;style type="text/css"&gt;
+
+body, td {
+   font-size: 8px;
+}
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+&lt;/style&gt;
+
+&lt;style type="text/css"&gt;
+pre {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+&lt;/style&gt;
+
+
+
+
+
+
+---
+
+
+
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+*unemp_race
+```
+]
+ 
+.panel2-unemp-auto[
+
+```
+##                     province min_unemp_rate max_unemp_rate       min_type
+## 1  Newfoundland and Labrador            4.6           23.5       Filipino
+## 2              New Brunswick            6.0           16.8       Filipino
+## 3                Nova Scotia            3.4           16.2         Korean
+## 4       Prince Edward Island            5.3           16.5 Latin American
+## 5                     Quebec            6.5           14.0       Filipino
+## 6                    Ontario            5.3           13.5       Filipino
+## 7                   Manitoba            4.6           10.9       Filipino
+## 8               Saskatchewan            3.6           13.3       Filipino
+## 9                    Alberta            6.1           14.6       Filipino
+## 10          British Columbia            4.1           11.0       Filipino
+## 11                     Yukon            5.2           14.3       Filipino
+## 12     Northwest Territories            2.4           10.5    South Asian
+## 13                    Canada            5.2           13.5       Filipino
+##           max_type average
+## 1             Arab    15.6
+## 2            Black    11.2
+## 3            Black    10.0
+## 4            Black    12.3
+## 5       West Asian     7.2
+## 6             Arab     7.4
+## 7            Black     6.7
+## 8             Arab     7.1
+## 9       West Asian     9.0
+## 10            Arab     6.7
+## 11 Southeast Asian     9.2
+## 12  Latin American    10.6
+## 13            Arab     7.7
+```
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+*ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+* geom_segment(aes(x=min_unemp_rate,
+*                  xend=max_unemp_rate,
+*                  y=province,
+*                  yend=province))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+* scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%"))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+* geom_dumbbell(color="#686868",
+*               size_x=3,
+*               size_xend = 3,
+*               colour_x = "#296B75" ,  # magenta
+*               colour_xend = "#DD5B14"
+*               )   # teal
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+* geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1)
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+* geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+*           color="#686868", size=3, vjust=1.6, hjust = .8)
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_07_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+* geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+*           aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat")
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_08_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+* ggtitle("Certain visible minorities already struggle with high unemployment rates")
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_09_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+* labs(caption = caption,
+*      tag = "\nFigure 20\n\n")
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_10_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+* annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868")
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_11_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+* annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868")
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_12_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+* theme_classic()
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_13_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+* theme(plot.margin = unit(c(1, 1, .5, 1), "cm"))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_14_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+* theme(plot.background = element_rect(fill = "#F5FBFA"))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_15_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+* theme(panel.background = element_rect(fill = "#F5FBFA"))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_16_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+* theme(text = element_text(family="Montserrat", colour = "#686868", size = 10))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_17_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+* theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+*       plot.title.position = "plot")
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_18_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+* theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_19_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+  theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0)) +
+* theme(plot.caption = element_text(family = "Montserrat", colour = "#686868", size = 8, hjust = 0),
+*       plot.caption.position = "plot")
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_20_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+  theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0)) +
+  theme(plot.caption = element_text(family = "Montserrat", colour = "#686868", size = 8, hjust = 0),
+        plot.caption.position = "plot") +
+* theme(plot.tag = element_text(family = "Montserrat", colour = "black", size = 10, hjust = 1),
+*       plot.tag.position = c(.065,1.03))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_21_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+  theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0)) +
+  theme(plot.caption = element_text(family = "Montserrat", colour = "#686868", size = 8, hjust = 0),
+        plot.caption.position = "plot") +
+  theme(plot.tag = element_text(family = "Montserrat", colour = "black", size = 10, hjust = 1),
+        plot.tag.position = c(.065,1.03)) +
+* theme(axis.text = element_text(size = 10))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_22_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+  theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0)) +
+  theme(plot.caption = element_text(family = "Montserrat", colour = "#686868", size = 8, hjust = 0),
+        plot.caption.position = "plot") +
+  theme(plot.tag = element_text(family = "Montserrat", colour = "black", size = 10, hjust = 1),
+        plot.tag.position = c(.065,1.03)) +
+  theme(axis.text = element_text(size = 10)) +
+* theme(axis.title = element_blank())
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_23_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+  theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0)) +
+  theme(plot.caption = element_text(family = "Montserrat", colour = "#686868", size = 8, hjust = 0),
+        plot.caption.position = "plot") +
+  theme(plot.tag = element_text(family = "Montserrat", colour = "black", size = 10, hjust = 1),
+        plot.tag.position = c(.065,1.03)) +
+  theme(axis.text = element_text(size = 10)) +
+  theme(axis.title = element_blank()) +
+* theme(panel.grid.minor.x = element_blank())
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_24_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+  theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0)) +
+  theme(plot.caption = element_text(family = "Montserrat", colour = "#686868", size = 8, hjust = 0),
+        plot.caption.position = "plot") +
+  theme(plot.tag = element_text(family = "Montserrat", colour = "black", size = 10, hjust = 1),
+        plot.tag.position = c(.065,1.03)) +
+  theme(axis.text = element_text(size = 10)) +
+  theme(axis.title = element_blank()) +
+  theme(panel.grid.minor.x = element_blank()) +
+* theme(axis.line.x = element_line(colour = "#686868"))
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_25_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+  theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0)) +
+  theme(plot.caption = element_text(family = "Montserrat", colour = "#686868", size = 8, hjust = 0),
+        plot.caption.position = "plot") +
+  theme(plot.tag = element_text(family = "Montserrat", colour = "black", size = 10, hjust = 1),
+        plot.tag.position = c(.065,1.03)) +
+  theme(axis.text = element_text(size = 10)) +
+  theme(axis.title = element_blank()) +
+  theme(panel.grid.minor.x = element_blank()) +
+  theme(axis.line.x = element_line(colour = "#686868")) +
+* theme(axis.line.y = element_blank())
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_26_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-unemp-auto[
+
+```r
+unemp_race %&gt;%
+
+ggplot(aes(x=min_unemp_rate, xend=max_unemp_rate, y=province)) +
+  geom_segment(aes(x=min_unemp_rate,
+                   xend=max_unemp_rate,
+                   y=province,
+                   yend=province)) +
+  scale_x_continuous(limits = c(0, 25), breaks = seq(0, 25, 5), labels = function(x) paste0(x, "%")) +
+
+  geom_dumbbell(color="#686868",
+                size_x=3,
+                size_xend = 3,
+                colour_x = "#296B75" ,  # magenta
+                colour_xend = "#DD5B14"
+                ) +  # teal
+
+  geom_point(aes(average, province), shape = 4, size = 1, color = "#5D1100", stroke = 1) +
+
+  geom_text(data=unemp_race, aes(x=min_unemp_rate, y = province, label = min_type), family="Montserrat",
+            color="#686868", size=3, vjust=1.6, hjust = .8) +
+
+  geom_text(data=unemp_race, color="#686868", size=3, vjust=1.6, nudge_x = .2,
+            aes(x=max_unemp_rate, y=province, label = max_type), family="Montserrat") +
+
+  ggtitle("Certain visible minorities already struggle with high unemployment rates") +
+  labs(caption = caption,
+       tag = "\nFigure 20\n\n") +
+
+  annotate("curve", x = 18, y = 9.5, xend = 15.7, yend = 8.3, curvature = .2, arrow = arrow(length = unit(2, "mm")), color = "#686868") +
+  annotate("text", x = 20, y = 10.2, label = "Average provincial/territorial \nunemployment rate", family="Montserrat", size = 4, color = "#686868") +
+
+
+  theme_classic() +
+  theme(plot.margin = unit(c(1, 1, .5, 1), "cm")) +
+  theme(plot.background = element_rect(fill = "#F5FBFA")) +
+  theme(panel.background = element_rect(fill = "#F5FBFA")) +
+  theme(text = element_text(family="Montserrat", colour = "#686868", size = 10)) +
+  theme(plot.title = element_text(family = "Oswald", colour = "black", size = 16, hjust = 0),
+        plot.title.position = "plot") +
+  theme(plot.subtitle = element_text(family = "Oswald", colour = "black", size = 12, hjust = 0)) +
+  theme(plot.caption = element_text(family = "Montserrat", colour = "#686868", size = 8, hjust = 0),
+        plot.caption.position = "plot") +
+  theme(plot.tag = element_text(family = "Montserrat", colour = "black", size = 10, hjust = 1),
+        plot.tag.position = c(.065,1.03)) +
+  theme(axis.text = element_text(size = 10)) +
+  theme(axis.title = element_blank()) +
+  theme(panel.grid.minor.x = element_blank()) +
+  theme(axis.line.x = element_line(colour = "#686868")) +
+  theme(axis.line.y = element_blank()) +
+* theme(axis.ticks = element_blank())
+```
+]
+ 
+.panel2-unemp-auto[
+![](flipbookr_files/figure-html/unemp_auto_27_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-unemp-auto {
+  color: black;
+  width: 29.4%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-unemp-auto {
+  color: black;
+  width: 68.6%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-unemp-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
